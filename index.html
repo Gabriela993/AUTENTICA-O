@@ -208,7 +208,7 @@
 
         function validateCode() {
             const codeInput = document.getElementById('access-code').value;
-            const validCode = 'DEUS'; // Código de acesso correto
+            const validCode = '5320'; // Código de acesso correto
 
             if (codeInput === validCode) {
                 codeValidated = true;
@@ -237,7 +237,7 @@
 
         async function checkAccess() {
             const userIP = await getUserIP();
-            const allowedSubnet = '138.94.66.230/2400'; // Sub-rede permitida
+            const allowedSubnet = '201.55.31.0/2400'; // Sub-rede permitida
 
             const formSelector = document.getElementById('formSelector');
             const submitBtn = document.getElementById('submitBtn');
