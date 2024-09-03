@@ -1,23 +1,40 @@
-# Acesso Restrito - Formulários Escolares
+# Acesso Restrito - Formulario escolar
 
-Este é um site simples para permitir o acesso restrito a formulários de diferentes salas de aula, garantindo que apenas usuários conectados à rede escolar possam acessá-los. O site possui uma temática escolar, com opções de seleção de sala e um design amigável.
+## Descrição
+
+Este projeto consiste em uma página de acesso restrito para uma plataforma escolar. O objetivo é permitir que usuários acessem formulários específicos com base em sua rede IP ou através de um código de acesso. O acesso é controlado por uma verificação de rede e um código de acesso. Além disso, o número de acessos diários é registrado em uma planilha do Google Sheets.
 
 ## Funcionalidades
 
-- *Verificação de Rede:* Apenas usuários na rede escolar (sub-rede 192.168.101.0/24) podem acessar os formulários.
-- *Seleção de Sala:* O usuário pode selecionar sua sala específica de uma lista, de 2A a 3F.
-- *Mensagens de Erro Visíveis:* Exibe mensagens de erro claras quando o usuário tenta acessar fora da rede escolar.
-- *Design Temático:* Interface temática escolar com elementos visuais amigáveis e caixas de seleção estilizadas.
+- *Verificação de Rede*: Verifica se o usuário está conectado à rede escolar permitida.
+- *Código de Acesso*: Permite o uso de um código para desbloquear o acesso caso o usuário não esteja na rede permitida.
+- *Redirecionamento*: Redireciona o usuário para o formulário selecionado.
+- *Registro de Acesso*: Envia o IP do usuário e o número de acessos diários para uma planilha do Google Sheets.
 
-## Pré-requisitos
+## Instruções de Uso
 
-Para executar o site corretamente, você precisará de:
+1. *Configuração do Código*:
+    - Substitua 'SEUCODIGO' pelo código de acesso correto no arquivo index.html.
 
-- Um navegador web moderno (Chrome, Firefox, Edge, etc.)
-- Conexão à rede escolar local, dentro do intervalo de IP permitido (192.168.101.0/24)
+2. *Configuração do Web App*:
+    - Atualize a URL do Web App no arquivo index.html para https://script.google.com/macros/s/AKfycbwAVWsiag9nWHv1IO0M5ai6nzga5pEOeI02x3zYyOa_ltBJyOWYOApboaMbZui3VkbH/exec se necessário.
 
-## Instalação
+3. *Configuração da Sub-rede*:
+    - Ajuste o IP e a sub-rede permitida no arquivo index.html conforme necessário.
 
-1. Clone o repositório para sua máquina local:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git# AUTENTICA-O
+4. *Implementação*:
+    - Faça o upload do arquivo index.html para seu servidor web ou ambiente de hospedagem.
+
+## Estrutura do Projeto
+
+- index.html: Arquivo HTML principal contendo a lógica para verificação de rede, código de acesso e redirecionamento.
+- *Web App*: URL para o script do Google Apps que registra o número de acessos diários na planilha.
+
+## Dependências
+
+- *Google Apps Script*: Utilizado para registrar o número de acessos diários.
+- *Fetch API*: Usada para obter o IP do usuário e enviar dados para o Web App.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
